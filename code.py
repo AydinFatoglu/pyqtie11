@@ -68,8 +68,16 @@ class ControlPanel(QWidget):
         if not ie_windows:
             self.close()
 
+def closeControlPanel():
+    # Check if the ControlPanel instance exists and close it
+    if hasattr(app, 'ctrl_panel') and app.ctrl_panel is not None:
+        app.ctrl_panel.close()
+
 if __name__ == '__main__':
     app = QApplication([])
+
+    # Connect the aboutToQuit signal to the closeControlPanel method
+    app.aboutToQuit.connect(closeControlPanel)
 
     # Check if a URL argument is provided
     if len(sys.argv) < 2:
@@ -96,3 +104,4 @@ if __name__ == '__main__':
     app.ctrl_panel = ctrl_panel
 
     app.exec_()
+
