@@ -1,2 +1,2 @@
 # pyqtie11
-This Python script provides a PyQt-based control panel for Internet Explorer, enabling users to navigate back and forth, and refresh the webpage directly from a PyQt window. It's designed for automation and easy control of an Internet Explorer session, complete with a focus on usability and integration between PyQt and the Internet Explorer COM object.
+This Python script offers a PyQt control panel for Internet Explorer, enabling users to navigate back and forth, refresh webpages, and start with a specific URL via command-line argument. Designed for automation, it enhances Internet Explorer control by integrating PyQt with IE's COM object for a user-friendly experience.
