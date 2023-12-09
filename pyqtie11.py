@@ -68,23 +68,15 @@ class ControlPanel(QWidget):
         if not ie_windows:
             self.close()
 
-def closeControlPanel():
-    # Check if the ControlPanel instance exists and close it
-    if hasattr(app, 'ctrl_panel') and app.ctrl_panel is not None:
-        app.ctrl_panel.close()
-
 if __name__ == '__main__':
     app = QApplication([])
-
-    # Connect the aboutToQuit signal to the closeControlPanel method
-    app.aboutToQuit.connect(closeControlPanel)
 
     # Check if a URL argument is provided
     if len(sys.argv) < 2:
         # Show a message box if no URL is provided
         msg = QMessageBox()
         msg.setIcon(QMessageBox.Information)
-        msg.setText("Usage: python myscript.py <URL>")
+        msg.setText("<URL> not given!")
         msg.setInformativeText("Please provide a URL as a command line argument.")
         msg.setWindowTitle("Argument Missing")
         msg.exec_()
